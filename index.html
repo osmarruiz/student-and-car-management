@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <title>laboratorio 3</title>
+</head>
+
+<body>
+    <div class="p-3 bg-info text-white">
+        <br>
+        <h3 class="text-center">Practica</h3>
+        <h3 class="text-center">Procesamientos de Formularios</h3>
+        <br>
+    </div>
+	<div class="accordion pl-2 pr-2 bg-info ml-5 mr-5" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Formulario Alumnos
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <h6>Alumnos</h6>
+                <p class="text-secondary">llene el formulario con los datos del estudiante</p>
+                <br>
+                <br>
+                <form method="post" action="procesar.php" enctype="multipart/form-data">
+                    <p>Correo Electronico <br> <input name="correo" type="email" placeholder="Ingrese su correo" required ></p>
+                    <p>Nombre Completo <br> <input name="nombre" type="text" placeholder="Ingrese su nombre completo" maxlength="200" size="25px" required></p>
+                    <p>Numero de Carnet <br> <input name="numero" type="text" placeholder="Ingrese su numero de carnet" maxlength="10" required</p>
+                    <p>Edad <br> <input name="edad" type="number" min="15" max="50" placeholder="Edad" required></p>
+                    <p>Curso Actual <br> <input name="curso" type="number" min="1" max="5" placeholder="Curso Actual" required></p>
+                    <p>Foto <br> <input name="imagen" type="file" required></p>
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Enviar">
+                </form>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Listado de Alumnos
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+           <button class="btn btn-primary ml-5">Ver Listados</button>
+            </div>
+          </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
