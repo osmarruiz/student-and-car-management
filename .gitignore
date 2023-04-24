@@ -1,0 +1,5 @@
+#ignorar imagenes
+img/*
+
+#ignorar fichero serializado
+persona.store
