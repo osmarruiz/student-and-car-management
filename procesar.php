@@ -1,4 +1,7 @@
 <?php
+include_once("Calumno.php");
+include_once("serializar.php");
+
 if(isset($_REQUEST['procesar']))
 {
     $correo = $_REQUEST['correo'];
@@ -6,6 +9,7 @@ if(isset($_REQUEST['procesar']))
     $numero = $_REQUEST['numero'];
     $edad = $_REQUEST['edad'];
     $curso = $_REQUEST['curso'];
+    $imagen = $_FILES['imagen'];
     
 }
 else
