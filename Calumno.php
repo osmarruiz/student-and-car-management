@@ -17,6 +17,15 @@ class Alumno {
         $this->foto=$arg_foto;
     }
 
+    public function guardarImagen() {
+        $destino = "img/"; 
+        $extension = pathinfo($this->foto['name'], PATHINFO_EXTENSION); 
+        $nombre_imagen = uniqid() . "." . $extension; 
+        $ruta_imagen = $destino . $nombre_imagen; 
+        move_uploaded_file($this->foto['tmp_name'], $ruta_imagen); 
+        $this->foto = $ruta_imagen; 
+    }
+
     public function imprimir()
     {
         echo "Correo Electrónico: $this->correo <br/>";
