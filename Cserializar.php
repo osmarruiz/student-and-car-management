@@ -1,5 +1,5 @@
 <?php
-class serializarArchivo {
+class Cserializar {
 
     /** Almacenamos los datos en el disco */
     public static function serializar($listaPersonas) {
@@ -22,12 +22,13 @@ class serializarArchivo {
             $listaPersonas = unserialize($arreglo_serializado);
             if(!is_array($listaPersonas))
                 $listaPersonas = array();
-
-        }catch(Exception $e) { 
+        }
+        catch(Exception $e) { 
             $listaPersonas = array();
         }
 
         return $listaPersonas;
     }
+    
 }
 ?>
