@@ -10,19 +10,22 @@ $list = Cserializar::deserializar();
 <br>
 <br>
 <table class="table">
-    <tr>
-        <thead>
+    <thead>
+        <tr>
             <th scope="row">Foto</th>
             <th scope="row">Informacion</th>
-        </thead>
-    </tr>
-<?php
-    foreach($list as $alumno){
-    
-        $alumno->imprimir();
-        echo "<tr><td><img src='". $alumno->foto . "'/></td><td>hola</td></tr>";
-    }
-?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+            foreach($list as $alumno){
+                echo "<tr>
+                <th scope='row'><img src='". $alumno->foto . "'/></th>
+                <td>" . $alumno->imprimir() . "</td>
+                </tr>";
+            }
+        ?>
+    </tbody>
 </table>
 <br>
 <br>

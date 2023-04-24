@@ -33,7 +33,7 @@ class Alumno {
         echo "Número de Carnet: $this->carnet <br/>";
         echo "Edad: $this->edad <br/>";
         echo "Curso Actual: $this->curso <br/>";
-        echo "Foto: $this->foto <br/>";
+
     }
     
     function __destruct() {
