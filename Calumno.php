@@ -28,12 +28,14 @@ class Alumno {
 
     public function imprimir()
     {
-        echo "Correo Electrónico: $this->correo <br/>";
-        echo "Nombre: $this->nombre <br/>";
-        echo "Número de Carnet: $this->carnet <br/>";
-        echo "Edad: $this->edad <br/>";
-        echo "Curso Actual: $this->curso <br/>";
-
+        $output = "";
+        $output .= "Correo Electrónico: $this->correo <br/>";
+        $output .= "Nombre: $this->nombre <br/>";
+        $output .= "Número de Carnet: $this->carnet <br/>";
+        $output .= "Edad: $this->edad <br/>";
+        $output .= "Curso Actual: $this->curso <br/>";
+    
+    return $output;
     }
     
     function __destruct() {
