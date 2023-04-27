@@ -29,9 +29,11 @@ class Alumno {
     public function imprimir()
     {
         $output = "";
+        $output .= "<br>";
+        $output .= "<br>";
+        $output .= "<b>Número de Carnet</b>: $this->carnet <br/>";
         $output .= "Correo Electrónico: $this->correo <br/>";
         $output .= "Nombre: $this->nombre <br/>";
-        $output .= "Número de Carnet: $this->carnet <br/>";
         $output .= "Edad: $this->edad <br/>";
         $output .= "Curso Actual: $this->curso <br/>";
     
