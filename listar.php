@@ -20,13 +20,15 @@ $list = Cserializar::deserializar();
         <?php
             foreach($list as $alumno){
                 echo "<tr>
-                <th scope='row'><img src='". $alumno->foto . "'/></th>
-                <td>" . $alumno->imprimir() . "</td>
-                </tr>";
+                        <td><img src='". $alumno->foto . "'/></td>
+                        <td>" . $alumno->imprimir() . "<a href='editar.php?carnet=" .$alumno->carnet .  "' class='mr-3'>Editar</a><a href='borrar.php?carnet=".$alumno->carnet ."'>Borrar</a></td>
+                      </tr>";
             }
         ?>
     </tbody>
 </table>
 <br>
 <br>
-<a href="index.html">Regresar a la pagina principal</a>
+<a href="index.html" class="ml-3">Regresar a la pagina principal</a>
+<br>
+<br>
