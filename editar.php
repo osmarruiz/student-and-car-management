@@ -19,11 +19,11 @@ for($i=0; $i<count($list); $i++){
 <br>
 <br>
 <form method="post" action="actualizar.php" enctype="multipart/form-data">
-                    <p>Correo Electronico <br> <input name="correo" type="email" placeholder="Ingrese su correo" required value= <?php echo $persona->correo; ?>></p>
-                    <p>Nombre Completo <br> <input name="nombre" type="text" placeholder="Ingrese su nombre completo" maxlength="200" size="25px" required value= <?php echo $persona->nombre; ?>></p>
-                    <p>Numero de Carnet <br> <input name="numero" type="text" placeholder="Ingrese su numero de carnet" maxlength="10" required value= <?php echo $persona->carnet; ?> <?php echo "readonly";?>></p>
-                    <p>Edad <br> <input name="edad" type="number" min="15" max="50" placeholder="Edad" required value= <?php echo $persona->edad; ?>></p>
-                    <p>Curso Actual <br> <input name="curso" type="number" min="1" max="5" placeholder="Curso Actual" required value= <?php echo $persona->curso; ?>></p>
+                    <p>Correo Electronico <br> <input name="correo" type="email" required value= '<?php echo $persona->correo; ?>'></p>
+                    <p>Nombre Completo <br> <input name="nombre" type="text" maxlength="200" size="25px" required value= '<?php echo $persona->nombre; ?>'></p>
+                    <p>Numero de Carnet <br> <input name="numero" type="text" maxlength="10" required value= '<?php echo $persona->carnet; ?>' <?php echo "readonly";?>></p>
+                    <p>Edad <br> <input name="edad" type="number" min="15" max="50" required value= '<?php echo $persona->edad; ?>'></p>
+                    <p>Curso Actual <br> <input name="curso" type="number" min="1" max="5" required value= '<?php echo $persona->curso; ?>'></p>
                     <p>Foto <br> <input name="imagen" type="file"></p>
                     <br>
                     <br>
