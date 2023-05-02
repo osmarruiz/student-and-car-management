@@ -1,9 +1,22 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <?php
 include_once("Calumno.php");
-include_once("Cserializar.php");
 
-$list = Cserializar::deserializar();
+//conecta a la base de datos
+$DB = new mysqli("localhost","root","","registro");
+if($DB->connect_errno){
+    print "Error en la conexion";
+    exit();
+}
+//consulta
+$result = $DB->query("select * from persona");
+//procesamiento de la consulta
+$list = array();
+for($i=0;$i < mysqli_num_rows($result); $i++){
+    $per = $result->fetch_assoc();
+    $list[$i] = new Alumno($per['correo'],$per['nombre'],$per['carnet'],$per['edad'],$per['curso'],$per['foto']);
+}
+
 ?>
 <h3>Resultados</h3>
 <h1>Listados de Alumnos</h1>
