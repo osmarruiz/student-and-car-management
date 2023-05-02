@@ -1,19 +1,25 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <?php
 include_once("Calumno.php");
-include_once("Cserializar.php");
 if(isset( $_GET['carnet']))
 {
 $carnet = $_GET['carnet'];
-$list = Cserializar::deserializar();
-for($i=0; $i<count($list); $i++){
-    if($list[$i]->carnet == $carnet){
-        unset($list[$i]);
-        $list = array_values($list);
-        break;
+    //conecta a la base de datos
+    $DB = new mysqli("localhost","root","","registro");
+    if($DB->connect_errno){
+    print "Error en la conexion";
+    exit();
     }
-}
-$result = Cserializar::serializar($list);
+      //consulta
+      $query = "select foto from persona where carnet = '$carnet'";
+      //inserta los datos
+      $result = $DB->query($query);
+      $col = $result->fetch_assoc();
+      unlink($col['foto']);
+    //consulta
+    $query = "delete from persona where carnet = '$carnet'";
+    //inserta los datos
+    $result = $DB->query($query);
 
     if($result)
     {

@@ -1,17 +1,23 @@
 <?php
 echo"<link rel='stylesheet' href='css/bootstrap.min.css'>";
 include_once("Calumno.php");
-include_once("Cserializar.php");
 
 if(isset($_REQUEST['procesar']))
 {
 
-    $listalumno = Cserializar::deserializar();
-    $newalumno = new Alumno($_POST['correo'], $_POST['nombre'], $_POST['numero'], $_POST['edad'], $_POST['curso'], $_FILES['imagen']);
-    $newalumno->guardarImagen();
-    array_push($listalumno, $newalumno);
-    $result = Cserializar::serializar($listalumno);
-
+    
+    $alum = new Alumno($_POST['correo'], $_POST['nombre'], $_POST['carnet'], (int)$_POST['edad'], (int)$_POST['curso'], $_FILES['imagen']);
+    $alum->guardarImagen();
+    //conecta a la base de datos
+    $DB = new mysqli("localhost","root","","registro");
+    if($DB->connect_errno){
+    print "Error en la conexion";
+    exit();
+    }
+    //consulta
+    $query = "insert into persona value ('$alum->carnet', '$alum->nombre', '$alum->correo', $alum->edad, $alum->curso, '$alum->foto')";
+    //inserta los datos
+    $result = $DB->query($query);
     if($result)
     {
         echo "<div class='bg-success'><h3 class='text-white text-center pt-4 pb-4'>Datos insertado correctamente</h3></div>";

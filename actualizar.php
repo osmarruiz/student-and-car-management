@@ -1,32 +1,39 @@
 <?php
 echo"<link rel='stylesheet' href='css/bootstrap.min.css'>";
 include_once("Calumno.php");
-include_once("Cserializar.php");
 
 if(isset($_REQUEST['actualizar']))
 {
-    if(!isset($_FILES['imagen']) && $_FILES['imagen']['error'] == UPLOAD_ERR_OK) {
-        $imagen = null;
-    } else {
-        
-    }
+    $carnet = $_POST['carnet'];
 
-    $list = Cserializar::deserializar();
-    for($i=0; $i<count($list); $i++){
-        if($list[$i]->carnet == $_POST['numero']){
-            $list[$i]->correo = $_POST['correo'];
-            $list[$i]->nombre = $_POST['nombre'];
-            $list[$i]->edad = $_POST['edad'];
-            $list[$i]->curso = $_POST['curso'];
-            if(isset($_FILES['imagen']) && $_FILES['imagen']['error'] == UPLOAD_ERR_OK) {
-                unlink($list[$i]->foto);
-                $list[$i]->foto = $_FILES['imagen'];
-                $list[$i]->guardarImagen();
-            }
-            break;
-        }
+    $alum = new Alumno($_POST['correo'],$_POST['nombre'],$_POST['carnet'],$_POST['edad'],$_POST['curso'],$_FILES['foto']);
+
+    
+    //conecta a la base de datos
+    $DB = new mysqli("localhost","root","","registro");
+    if($DB->connect_errno){
+    print "Error en la conexion";
+    exit();
     }
-    $result = Cserializar::serializar($list);
+    
+    if(isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
+         //consulta
+        $query = "select foto from persona where carnet = '$carnet'";
+        //inserta los datos
+        $result = $DB->query($query);
+        $col = $result->fetch_assoc();
+        unlink($col['foto']);
+        $alum->guardarImagen();
+    //consulta
+    $query = "update persona set  nombre = '$alum->nombre', correo = '$alum->correo', edad = $alum->edad, curso = $alum->curso, foto = '$alum->foto' where carnet = '$carnet'";
+    }
+    else{   
+    //consulta
+    $query = "update persona set  nombre = '$alum->nombre', correo = '$alum->correo', edad = $alum->edad, curso = $alum->curso where carnet = '$carnet'";
+    }
+    //inserta los datos
+    $result = $DB->query($query);
+    
 
     if($result)
     {
