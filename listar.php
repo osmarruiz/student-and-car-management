@@ -33,7 +33,7 @@ for($i=0;$i < mysqli_num_rows($result); $i++){
         <?php
             foreach($list as $alumno){
                 echo "<tr>
-                        <td><img src='". $alumno->foto . "'/></td>
+                        <td><img src='". $alumno->foto . "' style='width: 100px; height: 100px'/></td>
                         <td>" . $alumno->imprimir() . "<a href='editar.php?carnet=" .$alumno->carnet .  "' class='mr-3'>Editar</a><a href='borrar.php?carnet=".$alumno->carnet ."'>Borrar</a></td>
                       </tr>";
             }
