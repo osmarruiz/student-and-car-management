@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
-    <title>laboratorio 3</title>
+    <title>Alumnos y autos</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
               <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Formulario Alumnos
+                Registro de Alumnos
               </button>
             </h2>
           </div>
@@ -61,6 +61,43 @@
               <a href="listar.php"><button class="btn btn-primary">Ver Listados</button></a>
             </div>
           </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                  Registro de Autos
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body ">
+                  <h6>Auto</h6>
+                  <p class="text-secondary">Ingrese las caracteristicas de su Auto</p>
+                  <form method="post" action="procesarauto.php" enctype="multipart/form-data" class="form-group">
+                      <p>Placa <br> <input name="placa" type="text" placeholder="Ingrese la placa del auto" maxlength="10" required></p>
+                      <p>Modelo <br> <input name="Modelo" type="text" placeholder="Ingrese el modelo" maxlength="10" required></p>
+                      <p>Marca <br> <input name="marca" type="text" placeholder="Ingrese la marca" maxlength="10" required></p>
+                      <p>Descripcion <br> <input name="desc" type="text" placeholder="Descripcion del Auto" maxlenth="200" required></p>
+                      <br>
+                      <br>
+                      <input class="btn btn-primary" type="submit" name="procesar" value="Enviar">
+                  </form>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                  Listado de Autos
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body text-center pt-3 pb-3">
+                <a href="listar.php"><button class="btn btn-danger">Ver Autos</button></a>
+              </div>
+            </div>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
