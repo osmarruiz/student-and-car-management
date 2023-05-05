@@ -84,7 +84,7 @@
       <tbody>
         <?php
         foreach ($list as $auto) {
-          echo "<tr><td>$auto->id</td><td>$auto->placa</td><td>$auto->modelo</td><td>$auto->marca</td><td>$auto->descripcion</td>   <td><a href='editarauto.php?id=" . $auto->id .  "' class='btn btn-primary mr-3'>Editar</a><a href='borrar.php?id=" . $auto->id . "' class='btn btn-danger'>Borrar</a></td></tr>";
+          echo "<tr><td>$auto->id</td><td>$auto->placa</td><td>$auto->modelo</td><td>$auto->marca</td><td>$auto->descripcion</td>   <td><a href='editarauto.php?id=" . $auto->id .  "' class='btn btn-primary mr-3'>Editar</a><a href='borrarauto.php?id=" . $auto->id . "' class='btn btn-danger'>Borrar</a></td></tr>";
         }
         ?>
       </tbody>

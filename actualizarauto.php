@@ -31,9 +31,8 @@ if(isset($_REQUEST['actualizarauto']))
     {
         echo "<div class='bg-danger'><h3 class='text-white text-center pt-4 pb-4'>ocurrio un error</h3></div>";
     }
-    echo "<a href='index.html'>Regresar a la pagina principal</a>";
+    echo "<a href='index.html'  class='btn btn-secondary'>Regresar a la pagina principal</a>";
 }
 else
 echo "<div class='bg-info'><h3 class='text-white text-center pt-4 pb-4'>Primera visita</h3></div>";
-
 ?>
