@@ -1,8 +1,8 @@
 # Student and Car Management
 
 ## PHP CRUD Website with PHPMyAdmin Database
-
-PHP University Basic Practice. This project is a PHP-based website that implements CRUD (Create, Read, Update, Delete) operations with a database managed through PHPMyAdmin and also with a serialized file, focusing on students and cars.
+PHP University Basic Practice.
+This project is a PHP-based website that implements CRUD (Create, Read, Update, Delete) operations with a database managed through PHPMyAdmin and also with a serialized file, focusing on students and cars.
 
 ## Functionalities
 
@@ -65,11 +65,13 @@ To run the project on the `database` branch:
 
 ## Usage
 
-1. Access the main page in your browser.
+1. Set up the database with PHPMyAdmin and the SQL provided below (`database` branch).
 
-2. Set up the database with PHPMyAdmin and the SQL provided below.
+2. create `img` folder.
 
-3. Explore the CRUD options to manage student and car information.
+3. Access the main page in your browser.
+
+4. Explore the CRUD options to manage student and car information.
 
 ## Database Configuration in project
 
@@ -119,4 +121,4 @@ ALTER TABLE `autos`
 
 ALTER TABLE `autos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+```
