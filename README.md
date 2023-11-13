@@ -2,7 +2,7 @@
 
 ## PHP CRUD Website with PHPMyAdmin Database
 
-This project is a PHP-based website that implements CRUD (Create, Read, Update, Delete) operations with a database managed through PHPMyAdmin and also with a serialized file, focusing on students and cars.
+PHP University Basic Practice. This project is a PHP-based website that implements CRUD (Create, Read, Update, Delete) operations with a database managed through PHPMyAdmin and also with a serialized file, focusing on students and cars.
 
 ## Functionalities
 
