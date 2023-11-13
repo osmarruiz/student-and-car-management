@@ -65,11 +65,13 @@ To run the project on the `database` branch:
 
 ## Usage
 
-1. Access the main page in your browser.
+1. Set up the database with PHPMyAdmin and the SQL provided below (`database` branch).
 
-2. Set up the database with PHPMyAdmin and the SQL provided below.
+2. create `img` folder.
 
-3. Explore the CRUD options to manage student and car information.
+3. Access the main page in your browser.
+
+4. Explore the CRUD options to manage student and car information.
 
 ## Database Configuration in project
 

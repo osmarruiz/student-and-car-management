@@ -18,10 +18,14 @@ class Cserializar {
     /** Recuperamos los datos almacenados en el archivo */
     public static function deserializar() {
         try {
-            $arreglo_serializado = file_get_contents('persona.store');
-            $listaPersonas = unserialize($arreglo_serializado);
+            $listaPersonas = null;
+            if(file_exists('persona.store')){
+                $arreglo_serializado = file_get_contents('persona.store');
+                $listaPersonas = unserialize($arreglo_serializado);
+                
+            }
             if(!is_array($listaPersonas))
-                $listaPersonas = array();
+            $listaPersonas = array();
         }
         catch(Exception $e) { 
             $listaPersonas = array();
